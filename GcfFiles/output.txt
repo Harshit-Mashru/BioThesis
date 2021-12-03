@@ -1,0 +1,10 @@
+Treponema phagedenis F0421 genome assembly ASM18710v1
+Veillonella atypica ACS-049-V-Sch6 genome assembly ASM17973v1
+Veillonella parvula ACS-068-V-Sch12 genome assembly ASM21502v2
+Weissella paramesenteroides ATCC 33313 genome assembly ASM16057v1
+Veillonella seminalis ACS-216-V-Col6b genome assembly Veil_ratt_ACS-216-V-COL6B_V1
+Treponema vincentii ATCC 35580 genome assembly ASM17589v1
+Yokenella regensburgei ATCC 43003 genome assembly ASM23933v1
+Veillonella atypica ACS-134-V-Col7a genome assembly ASM17975v1
+Veillonella dispar ATCC 17748 genome assembly ASM16001v1
+Veillonella parvula ATCC 17745 genome assembly ASM17743v1
