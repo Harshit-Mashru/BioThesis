@@ -44,4 +44,4 @@ for fileName in lst:
 
 bar.finish()
 
-subprocess.run('mv *.lfold ../dotBracketNotations', shell=True)
+subprocess.run('mv *.lfold ../3.dotBracketNotations', shell=True)

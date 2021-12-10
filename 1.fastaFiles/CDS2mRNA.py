@@ -36,7 +36,7 @@ for fileName in lst:
 
 	newFile += "mRNA"
 	
-	file = open("../mRNAFiles/" + newFile, 'w', encoding = 'utf-8')
+	file = open("../2.mRNAFiles/" + newFile, 'w', encoding = 'utf-8')
 
 	for seq_record in SeqIO.parse(fileName, 'fasta'):
 		#print(seq_record.id)

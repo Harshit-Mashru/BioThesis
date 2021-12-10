@@ -44,7 +44,7 @@ for fileName in lst:
 	file = open(fileName, 'r')
 	lines = file.readlines()
 	#itr = 0
-	filteredFile = open("../finalSequences/" + newFile, 'w', encoding = 'utf-8')
+	filteredFile = open("../4.finalSequences/" + newFile, 'w', encoding = 'utf-8')
 	#filteredFile = open(newFile, 'w')
 	lastline = ""
 
