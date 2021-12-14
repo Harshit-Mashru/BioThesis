@@ -39,17 +39,14 @@ for fileName in lst:
 	file = open("../2.mRNAFiles/" + newFile, 'w', encoding = 'utf-8')
 
 	for seq_record in SeqIO.parse(fileName, 'fasta'):
-		#print(seq_record.id)
-		#print(seq_record.description)
+
 		file.write(">" + seq_record.description + "\n")
 		if "complement(" in seq_record.description:
 			template_strand = seq_record.seq.reverse_complement()
 			#print(repr(template_strand.transcribe()))
 			file.write(str(template_strand.transcribe()) + "\n\n")
 		else:
-			#print(repr(seq_record.seq.transcribe()))
+
 			file.write(str(seq_record.seq.transcribe()) + "\n\n")
 		
-		#print(len(seq_record))
-
 	file.close()

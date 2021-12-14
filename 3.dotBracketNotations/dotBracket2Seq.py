@@ -13,9 +13,6 @@ path = "./"
 
 lst = os.listdir(path)
 
-# RNALfold only shows mRNAs that are energetically stable i.e., negative values, This variable is being added as per request from Sir.
-thresholdForEnergy = 0
-
 for fileName in lst:
 	
 	if fileName == "dotBracket2Seq.py":
@@ -138,6 +135,8 @@ for fileName in lst:
 				stored.append(newLine)
 			lastline = newLine
 			continue
+
+	filteredFile.close()
 
 # This part is for plotting the mRNAs. But first we need to filter the output of the lfold files to include only those mRNAs that are useful to us.
 # Criteria for selection was stem and loop length.
