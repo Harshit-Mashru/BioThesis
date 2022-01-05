@@ -63,7 +63,8 @@ for fileName in lst:
 			
 			for dotBracketSeq in stored:
 				filteredFile.write(dotBracketSeq)
-				temp = dotBracketSeq.split(".")
+				temp = dotBracketSeq.split(" ")
+				#print(dotBracketSeq)
 				offset = int(temp[-1])
 
 				seq = ""
@@ -84,57 +85,69 @@ for fileName in lst:
 		f = re.search("\.(\(\.{0,2}){24}\.{3,15}(\)\.{0,2}){23}\)\.", line)
 		if f != None:
 			offset = int(line[-6:]) + f.start()
-			newLine = f.group(0) + " " + str(offset) + "\n"
-			if newLine != lastline:
-				#filteredFile.write(newLine)
-				stored.append(newLine)
-			lastline = newLine
-			continue
+			energy = re.search("\(\s{0,1}-\d{0,3}\.\d{2}\)", line)
+			if energy != None:
+				lineToCompare = f.group(0) + " " + str(offset) + "\n"
+				newLine = f.group(0) + " " + energy.group(0) + " " + str(offset) + "\n"
+				if lineToCompare != lastline:
+					stored.append(newLine)
+				lastline = lineToCompare
+				continue
 		e = re.search("\.(\(\.{0,2}){23}\.{3,15}(\)\.{0,2}){22}\)\.", line)
 		if e != None:
 			offset = int(line[-6:]) + e.start()
-			newLine = e.group(0) + " " + str(offset) + "\n"
-			if newLine != lastline:
-				#filteredFile.write(newLine)
-				stored.append(newLine)
-			lastline = newLine
-			continue
+			energy = re.search("\(\s{0,1}-\d{0,3}\.\d{2}\)", line)
+			if energy != None:
+				lineToCompare = e.group(0) + " " + str(offset) + "\n"
+				newLine = e.group(0) + " " + energy.group(0) + " " + str(offset) + "\n"
+				if lineToCompare != lastline:
+					stored.append(newLine)
+				lastline = lineToCompare
+				continue
 		d = re.search("\.(\(\.{0,2}){22}\.{3,15}(\)\.{0,2}){21}\)\.", line)
 		if d != None:
 			offset = int(line[-6:]) + d.start()
-			newLine = d.group(0) + " " + str(offset) + "\n"
-			if newLine != lastline:
-				#filteredFile.write(newLine)
-				stored.append(newLine)
-			lastline = newLine
-			continue
+			energy = re.search("\(\s{0,1}-\d{0,3}\.\d{2}\)", line)
+			if energy != None:
+				lineToCompare = d.group(0) + " " + str(offset) + "\n"
+				newLine = d.group(0) + " " + energy.group(0) + " " + str(offset) + "\n"
+				if lineToCompare != lastline:
+					stored.append(newLine)
+				lastline = lineToCompare
+				continue
 		c = re.search("\.(\(\.{0,2}){21}\.{3,15}(\)\.{0,2}){20}\)\.", line)
 		if c != None:
 			offset = int(line[-6:]) + c.start()
-			newLine = c.group(0) + " " + str(offset) + "\n"
-			if newLine != lastline:
-				#filteredFile.write(newLine)
-				stored.append(newLine)
-			lastline = newLine
-			continue
+			energy = re.search("\(\s{0,1}-\d{0,3}\.\d{2}\)", line)
+			if energy != None:
+				lineToCompare = c.group(0) + " " + str(offset) + "\n"
+				newLine = c.group(0) + " " + energy.group(0) + " " + str(offset) + "\n"
+				if lineToCompare != lastline:
+					stored.append(newLine)
+				lastline = lineToCompare
+				continue
 		b = re.search("\.(\(\.{0,2}){20}\.{3,15}(\)\.{0,2}){19}\)\.", line)
 		if b != None:
 			offset = int(line[-6:]) + b.start()
-			newLine = b.group(0) + " " + str(offset) + "\n"
-			if newLine != lastline:
-				#filteredFile.write(newLine)
-				stored.append(newLine)
-			lastline = newLine
-			continue
+			energy = re.search("\(\s{0,1}-\d{0,3}\.\d{2}\)", line)
+			if energy != None:
+				lineToCompare = b.group(0) + " " + str(offset) + "\n"
+				newLine = b.group(0) + " " + energy.group(0) + " " + str(offset) + "\n"
+				if lineToCompare != lastline:
+					stored.append(newLine)
+				lastline = lineToCompare
+				continue
 		a = re.search("\.(\(\.{0,2}){19}\.{3,15}(\)\.{0,2}){18}\)\.", line)
 		if a != None:
 			offset = int(line[-6:]) + a.start()
-			newLine = a.group(0) + " " + str(offset) + "\n"
-			if newLine != lastline:
-				#filteredFile.write(newLine)
-				stored.append(newLine)
-			lastline = newLine
-			continue
+			energy = re.search("\(\s{0,1}-\d{0,3}\.\d{2}\)", line)
+			if energy != None:
+				lineToCompare = a.group(0) + " " + str(offset) + "\n"
+				newLine = a.group(0) + " " + energy.group(0) + " " + str(offset) + "\n"
+				if lineToCompare != lastline:
+					stored.append(newLine)
+				lastline = lineToCompare
+				continue
 
 	filteredFile.close()
 
